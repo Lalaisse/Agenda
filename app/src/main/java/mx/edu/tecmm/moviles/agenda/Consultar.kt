@@ -1,5 +1,6 @@
 package mx.edu.tecmm.moviles.agenda
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +9,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Consultar : AppCompatActivity() {
+class Consultar : AppCompatActivity(), IClickListener{
     lateinit var recycler: RecyclerView;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,11 @@ class Consultar : AppCompatActivity() {
 
         recycler=findViewById(R.id.contactos_rv);
         obtenerDatos();
+    }
+
+    override fun onResume() {
+        super.onResume()
+        obtenerDatos()
     }
 
     fun obtenerDatos() {
@@ -39,8 +45,18 @@ class Consultar : AppCompatActivity() {
     }
     fun acomodarRecycler(listaPersona: List<Persona>){
         //Crear mi adaptador y mandar llamar los datos
-        val adaptador= AdaptadorPersona(this, listaPersona);
+        val adaptador= AdaptadorPersona(this, listaPersona, this);
         recycler.adapter= adaptador;
+    }
+
+    override fun onCellClick(persona: Persona) {
+        Log.e("Click", "${persona}")
+        val intent= Intent(this, Modificar::class.java);
+        intent.putExtra("nombre", persona.nombre)
+        intent.putExtra("apellido", persona.apellido);
+        intent.putExtra("edad", persona.edad);
+        intent.putExtra("id", persona.id.toString());
+        startActivity(intent);
     }
 
 }

@@ -8,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 //Clase para llenar el Recycler View
 class AdaptadorPersona(context: Context,
-                        private var datos: List<Persona>):
-                                    RecyclerView.Adapter<AdaptadorPersona.ViewHolderPersona>(){
+                        private var datos: List<Persona>,
+                        private var clickCell: IClickListener):
+                        RecyclerView.Adapter<AdaptadorPersona.ViewHolderPersona>(){
 
 
     //Clase interna para llenar los valores de los item
@@ -34,6 +35,9 @@ class AdaptadorPersona(context: Context,
         holder.txtApellido.text= persona.apellido;
         holder.txtEdad.text= persona.edad.toString();
         holder.txtId.text= persona.id.toString();
+        holder.itemView.setOnClickListener{
+            clickCell.onCellClick(persona);
+        }
     }
 
     override fun getItemCount(): Int = datos.size;

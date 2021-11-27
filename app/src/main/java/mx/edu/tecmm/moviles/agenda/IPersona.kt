@@ -13,5 +13,7 @@ interface IPersona {
     @POST("agrega.php")
     fun agregar(@Body persona: Persona): Call<Resultado>
 
+    @POST("update.php")
+    fun modificar(@Body persona: Persona): Call<Resultado>
 
 }

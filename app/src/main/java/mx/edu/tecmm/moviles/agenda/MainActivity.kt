@@ -24,4 +24,5 @@ class MainActivity : AppCompatActivity() {
         val intent= Intent(this, Consultar:: class.java);
         startActivity(intent);
     }
+    
 }
