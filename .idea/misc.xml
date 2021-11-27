@@ -3,10 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/isela/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_agregar.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/isela/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_consultar.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/isela/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_agregar.xml" value="0.264" />
+        <entry key="..\:/Users/isela/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_consultar.xml" value="0.1" />
         <entry key="..\:/Users/isela/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/isela/AndroidStudioProjects/Agenda/app/src/main/res/layout/view_item.xml" value="0.264" />
+        <entry key="..\:/Users/isela/AndroidStudioProjects/Agenda/app/src/main/res/layout/view_item.xml" value="0.2" />
       </map>
     </option>
   </component>
